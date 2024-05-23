@@ -18,4 +18,4 @@ class Trade(db_connection.Base):
 # symbol: The stock symbol (string)
 # shares: The total number of shares traded. The shares value traded is between 10 and 30 shares, inclusive(integer)
 # price
-# timestamp
+# timestamp   
