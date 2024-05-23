@@ -1,0 +1,45 @@
+In this challenge, your task is to implement a simple REST API to manage a collection of stock trades
+each trade is a JSON entry with the following keys
+id: the unique trade ID (integer)
+type: The trade type, either "buy" or "sell"
+user _id : The unique user id (integer)
+symbol: The stock symbol (string)
+shares: The total number of shares traded. The shares value traded is between 10 and 30 shares, inclusive(integer)
+price
+timestamp
+
+
+
+The model implementation is already provided and is in read only mode
+
+
+It has a time stamp field of date time type, which must be serealised to/from Json timestamp of integer type.
+
+The task is to implement the rest service exposes /trades/ endpoint which allows for managing the collection of trade records in the following way:
+
+Post request to /trades/:
+
+1. Creates a new trade
+2. Expects a JSON trade object without an ID property as a body pay load. You can assume that the given object is always valid
+3. Adds the given trade object to the collection of trades and assigns a unique integer ID to it.
+
+4. The response code is 201 and the response body is the created trade object.
+
+
+Get request to /trades/
+
+1. Return a collection of all trades
+
+2. The response code is 200 and their response body is matching trade object.
+
+3. If there is no trade with the given ID in the collection the response code is 404
+
+
+DELETE, PUT, PATCH request to /trade/<id>/
+The response code is 405.
+Because the API does not allow deleting or modifying trades for any ID value
+
+
+
+An assignment in case you want to try using FastAPI
+	
